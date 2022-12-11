@@ -1,0 +1,47 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1>liste des Produits</h1>
+	<table border="1">
+		<thead>
+			<th>
+				Libelle
+			</th>
+			<th>
+				Prix
+			</th>
+      <th>
+				Description
+			</th>
+      <th>
+				Quantité
+			</th>
+            <th>
+            Action
+            </th>
+		</thead>
+		<tbody>
+			{% for product in products %}
+				<tr>
+					<td>
+						{{ product.libelle }}
+					</td>
+					<td>
+						{{ product.prix }}
+					</td>
+          <td>
+						{{ product.description }}
+					</td>
+          <td>
+						{{ product.quantite }}
+					</td>
+                    <td>
+						<a href="http://localhost:3000/products/removeProduct/{{product._id}}"><button style="background-color:red;color:white;font-weight:bold">supprimer</button></a>
+                        <a href="http://localhost:3000/products/editProduct/{{product._id}}"><button style="background-color:#000;color:white;font-weight:bold">modifier</button></a>
+                    </td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

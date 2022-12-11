@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1 style="color:red">
+		Ajouter Un Produit</h1>
+	<form method="post" action="http://localhost:3000/products/addProduct">
+		Libelle:
+		<input type="text" name="libelle" style="width:250px"/>
+		<br/><br/>
+        
+		Prix
+		<input type="number" name="prix" style="width:250px;margin:20px"/>
+		<br/>
+        Description:
+		<input type="text" name="description" style="width:250px"/>
+		<br/><br/>
+        Quantité:
+		<input type="number" name="quantite" style="width:250px;margin:20px"/>
+		<br/>
+		<button type="submit" style="background-color:green;color:white">
+			Ajouter Produit
+		</button>
+	</form>
+{% endblock %}

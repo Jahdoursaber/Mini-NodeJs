@@ -1,0 +1,22 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<h1>Modifier Produit</h1>
+<form method="post" action="http://localhost:3000/products/update/{{productInfo._id}}">
+		Libelle:
+		<input type="text" name="libelle" value="{{ productInfo.libelle }}" style="width:250px"/>
+		<br/><br/>
+		Prix
+		<input type="number" name="prix" value="{{ productInfo.prix }}" style="width:250px;margin:20px"/>
+		<br/>
+        Description:
+		<input type="text" name="description" value="{{ productInfo.description }}" style="width:250px"/>
+		<br/><br/>
+        Quantité:
+		<input type="number" name="quantite" value="{{ productInfo.quantite }}" style="width:250px;margin:20px"/>
+		<br/>
+		<button type="submit" style="background-color:green;color:white">
+			Modifier Produit
+		</button>
+	</form>
+{% endblock %}
